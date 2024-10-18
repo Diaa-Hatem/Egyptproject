@@ -1,9 +1,10 @@
 @extends('themes.master')
 
+@section('main-title', 'About page')
 
 @section('hero-title', 'About Us')
 
-@section('nav-active-about' , 'active')
+@section('nav-active-about', 'active')
 
 @section('hero-image')
     <img src="{{ asset('assets') }}/images/couch.png" class="img-fluid">
@@ -159,7 +160,7 @@
 
 
     <!-- Start Testimonial Slider -->
-    <div class="testimonial-section before-footer-section">
+    <div class="testimonial-section mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mx-auto text-center">
@@ -177,90 +178,37 @@
                         </div>
 
                         <div class="testimonial-slider">
+                            @if (count($users) > 0)
+                                @foreach ($users as $user)
+                                    <div class="item">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-8 mx-auto">
 
-                            <div class="item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8 mx-auto">
+                                                <div class="testimonial-block text-center">
+                                                    <blockquote class="mb-5">
+                                                        <p>&ldquo;He is one of the most serious people in work and who makes
+                                                            big
+                                                            profits&rdquo;</p>
+                                                    </blockquote>
 
-                                        <div class="testimonial-block text-center">
-                                            <blockquote class="mb-5">
-                                                <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
-                                                    quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate
-                                                    velit imperdiet dolor tempor tristique. Pellentesque habitant morbi
-                                                    tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                    Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                            </blockquote>
-
-                                            <div class="author-info">
-                                                <div class="author-pic">
-                                                    <img src="{{ asset('assets') }}/images/person-1.png" alt="Maria Jones"
-                                                        class="img-fluid">
+                                                    <div class="author-info">
+                                                        <div class="author-pic">
+                                                            <img src="{{ asset('assets') }}/images/person-1.png"
+                                                                alt="Maria Jones" class="img-fluid">
+                                                        </div>
+                                                        <h3 class="font-weight-bold">{{ $user->name }}</h3>
+                                                        <span class="position d-block mb-3">CEO, Co-Founder, XYZ
+                                                            Inc.</span>
+                                                    </div>
                                                 </div>
-                                                <h3 class="font-weight-bold">Maria Jones</h3>
-                                                <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
+
                                             </div>
                                         </div>
-
                                     </div>
-                                </div>
-                            </div>
-                            <!-- END item -->
+                                   
+                                @endforeach
+                            @endif
 
-                            <div class="item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8 mx-auto">
-
-                                        <div class="testimonial-block text-center">
-                                            <blockquote class="mb-5">
-                                                <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
-                                                    quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate
-                                                    velit imperdiet dolor tempor tristique. Pellentesque habitant morbi
-                                                    tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                    Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                            </blockquote>
-
-                                            <div class="author-info">
-                                                <div class="author-pic">
-                                                    <img src="{{ asset('assets') }}/images/person-1.png"
-                                                        alt="Maria Jones" class="img-fluid">
-                                                </div>
-                                                <h3 class="font-weight-bold">Maria Jones</h3>
-                                                <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END item -->
-
-                            <div class="item">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-8 mx-auto">
-
-                                        <div class="testimonial-block text-center">
-                                            <blockquote class="mb-5">
-                                                <p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
-                                                    quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate
-                                                    velit imperdiet dolor tempor tristique. Pellentesque habitant morbi
-                                                    tristique senectus et netus et malesuada fames ac turpis egestas.
-                                                    Integer convallis volutpat dui quis scelerisque.&rdquo;</p>
-                                            </blockquote>
-
-                                            <div class="author-info">
-                                                <div class="author-pic">
-                                                    <img src="{{ asset('assets') }}/images/person-1.png"
-                                                        alt="Maria Jones" class="img-fluid">
-                                                </div>
-                                                <h3 class="font-weight-bold">Maria Jones</h3>
-                                                <span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END item -->
 
                         </div>
 
@@ -269,5 +217,14 @@
             </div>
         </div>
     </div>
+    <br>
     <!-- End Testimonial Slider -->
+@endsection
+
+@section('footer-image')
+
+    <div class="sofa-img">
+        <img src="{{ asset('assets') }}/images/sofa.png" alt="Image" class="img-fluid">
+    </div>
+
 @endsection

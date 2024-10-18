@@ -1,5 +1,6 @@
 @extends('themes.master')
 
+@section('main-title', 'Contact page')
 
 @section('hero-title', 'Contact Us')
 @section('nav-active-contact', 'active')
@@ -155,5 +156,11 @@
 
         <!-- End Contact Form -->
 
+@endsection
+@section('footer-image')
 
-    @endsection
+    <div class="sofa-img">
+        <img src="{{ asset('assets') }}/images/sofa.png" alt="Image" class="img-fluid">
+    </div>
+
+@endsection

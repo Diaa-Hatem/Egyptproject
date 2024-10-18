@@ -1,39 +1,40 @@
  <!-- Start Footer Section -->
  <footer class="footer-section">
      <div class="container relative">
-
-         <div class="sofa-img">
-             <img src="{{ asset('assets') }}/images/sofa.png" alt="Image" class="img-fluid">
-         </div>
+        @yield('footer-image')
+         
 
          <div class="row">
              <div class="col-lg-8">
                  <div class="subscription-form">
+
                      <h3 class="d-flex align-items-center"><span class="me-1"><img
                                  src="{{ asset('assets') }}/images/envelope-outline.svg" alt="Image"
                                  class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+                    
                      @if (session('status'))
                          <div class="alert alert-success">
                              {{ session('status') }}
                          </div>
                      @endif
-                     <form action="{{route('subscribe.store')}}" method="post" class="row g-3">
-                        @csrf
-                        
+                     <form action="{{ route('subscribe.store') }}" method="post" class="row g-3">
+                         @csrf
+
                          <div class="col-auto">
                              <input type="text" name="name" class="form-control" placeholder="Enter your name">
                              @error('name')
-                             <span class="text-danger">{{$message}}</span>
-                         @enderror
+                                 <span class="text-danger">{{ $message }}</span>
+                             @enderror
                          </div>
-                         
+
                          <div class="col-auto">
                              <input type="email" name="email" class="form-control" placeholder="Enter your email">
                              @error('email')
-                             <span class="text-danger">{{$message}}</span>
-                         @enderror
+                                 <span class="text-danger">{{ $message }}</span>
+                             @enderror
                          </div>
-                         
+
                          <div class="col-auto">
                              <button type="submit" class="btn btn-primary">
                                  <span class="fa fa-paper-plane"></span>
@@ -47,7 +48,7 @@
 
          <div class="row g-5 mb-5">
              <div class="col-lg-4">
-                 <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a>
+                 <div class="mb-4 footer-logo-wrap"><a href="{{route('homepage')}}" class="footer-logo">Furni<span>.</span></a>
                  </div>
                  <p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
                      malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
@@ -65,37 +66,31 @@
                  <div class="row links-wrap">
                      <div class="col-6 col-sm-6 col-md-3">
                          <ul class="list-unstyled">
-                             <li><a href="#">About us</a></li>
-                             <li><a href="#">Services</a></li>
-                             <li><a href="#">Blog</a></li>
-                             <li><a href="#">Contact us</a></li>
+                             <li><a href="{{route('aboutpage')}}">About us</a></li>
+                             <li><a href="{{route('servicespage')}}">Services</a></li>
+                             <li><a href="{{route('blogpage')}}">Blog</a></li>
+                             <li><a href="{{route('contactpage')}}">Contact us</a></li>
                          </ul>
                      </div>
 
                      <div class="col-6 col-sm-6 col-md-3">
                          <ul class="list-unstyled">
-                             <li><a href="#">Support</a></li>
-                             <li><a href="#">Knowledge base</a></li>
+                             <li><a href="{{route('contactpage')}}">Support</a></li>
                              <li><a href="#">Live chat</a></li>
+                             <li><a href="#">Privacy Policy</a></li>
+
                          </ul>
                      </div>
 
                      <div class="col-6 col-sm-6 col-md-3">
                          <ul class="list-unstyled">
                              <li><a href="#">Jobs</a></li>
-                             <li><a href="#">Our team</a></li>
+                             <li><a href="{{route('contactpage')}}">Our team</a></li>
                              <li><a href="#">Leadership</a></li>
-                             <li><a href="#">Privacy Policy</a></li>
                          </ul>
                      </div>
 
-                     <div class="col-6 col-sm-6 col-md-3">
-                         <ul class="list-unstyled">
-                             <li><a href="#">Nordic Chair</a></li>
-                             <li><a href="#">Kruzo Aero</a></li>
-                             <li><a href="#">Ergonomic Chair</a></li>
-                         </ul>
-                     </div>
+                     
                  </div>
              </div>
 

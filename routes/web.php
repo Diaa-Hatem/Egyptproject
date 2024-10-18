@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscribeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ThemeController;
+use App\Http\Requests\ItemRequest;
 use App\Models\Subscribe;
 
 /*
@@ -17,9 +19,9 @@ use App\Models\Subscribe;
 |
 */
 
-Route::get('/', function () {
-    return view('themes.home');
-});
+// Route::get('/', function () {
+//     return view('themes.home');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -49,5 +51,10 @@ Route::controller(ThemeController::class)->group(function () {
 });
 
 Route::post('/subscribe/store', [SubscribeController::class, 'subscribe'])->name('subscribe.store');
+
+Route::get('/my-items',[ItemController::class ,'myitems'])->name('items.my-items');
+Route::resource('/items',ItemController::class);
+
+
 
 require __DIR__ . '/auth.php';

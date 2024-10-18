@@ -6,23 +6,30 @@ use App\Http\Requests\StoreContantRequest;
 use App\Models\contact;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Item;
 use App\Models\Subscribe;
+use App\Models\User;
 
 class ThemeController extends Controller
 {
     public function home()
     {
-        return view('themes.home');
+        $items=Item::take(3)->get();
+        $users=User::take(3)->get();
+        return view('themes.home' , compact('items' , 'users'));
     }
 
     public function about()
     {
-        return view('themes.about');
+        $users=User::take(3)->get();
+        return view('themes.about' ,compact('users'));
     }
 
     public function services()
     {
-        return view('themes.services');
+        $items=Item::take(3)->get();
+        $users=User::take(3)->get();
+        return view('themes.services' , compact('items' , 'users'));
     }
 
     public function cart()
@@ -37,12 +44,15 @@ class ThemeController extends Controller
 
     public function shop()
     {
-        return view('themes.shop');
+        $items=Item::get();
+
+        return view('themes.shop' ,compact('items'));
     }
 
     public function blog()
     {
-        return view('themes.blog');
+
+        return view('themes.blog' );
     }
 
     public function contact()

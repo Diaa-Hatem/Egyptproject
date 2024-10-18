@@ -1,4 +1,3 @@
-<link rel="shortcut icon" href="{{ asset('assets') }}/favicon.png">
 <x-app-layout>
 
     <x-slot name="header">

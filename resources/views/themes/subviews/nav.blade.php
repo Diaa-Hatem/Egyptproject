@@ -24,14 +24,20 @@
                          us</a></li>
              </ul>
 
-             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md- ms-5">
                  <li><a class="nav-link" href="{{route('cartpage')}}"><img src="{{ asset('assets') }}/images/cart.svg"></a></li>
                  @if (!Auth::check())
-                     <li><a class="nav-link" href="{{route('register')}}">Register / Login</a></li>
+                 <div class="hidden sm:flex sm:items-center sm:ms-6">
+                    <div style="border: 1px solid #f9bf29 ;padding: 5px 5px ;border-radius: 5px ;background-color:#f9bf29 ;color: white" >
+                        <a style="text-decoration: none" href="{{route('items.create')}}">
+                            Register / Login</a>
+                    </div>
+                     {{-- <li><a class="nav-link" href="{{route('register')}}">Register / Login</a></li> --}}
                  @else
                  <li><a class="nav-link" href="{{route('profile.edit')}}"><img src="{{ asset('assets') }}/images/user.svg"></a></li>
 
                  @endif
+
 
              </ul>
          </div>

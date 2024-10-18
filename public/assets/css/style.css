@@ -94,6 +94,10 @@ a {
       margin-right: 0px; }
       .custom-navbar .custom-navbar-cta li:first-child {
         margin-right: 20px; }
+.profile-hero
+{
+  background: #3b5d50;
+}
 
 .hero {
   background: #3b5d50;

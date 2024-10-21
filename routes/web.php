@@ -42,12 +42,20 @@ Route::controller(ThemeController::class)->group(function () {
     Route::get('/shop', 'shop')->name('shoppage');
     Route::get('/blog', 'blog')->name('blogpage');
 
-    Route::get('/cart', 'cart')->name('cartpage');
+    Route::get('/cart/{id}', 'cart')->name('cartpage');
+    Route::get('/cart', 'showcart')->name('showcart');
+    Route::get('/cartupdate', 'cartupdate')->name('cartupdate');
+    Route::get('/deletecart/{id}', 'deletecart')->name('cartdelete');
+
+
     Route::get('/checkout', 'checkout')->name('checkoutpage');
+    Route::get('/destroysession','destroysession')->name('destroysession');
 
 
     Route::get('/contact', 'contact')->name('contactpage');
     Route::post('/contact/store', 'contactstore')->name('contact.store');
+
+    Route::post('/thankyou','thankyou')->name('thankyoupage');
 });
 
 Route::post('/subscribe/store', [SubscribeController::class, 'subscribe'])->name('subscribe.store');

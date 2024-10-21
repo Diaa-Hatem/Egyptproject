@@ -40,7 +40,7 @@ class ItemController extends Controller
         $data['user_id'] = Auth::user()->id;
         Item::create($data);
 
-        return back();
+        return back()->with('add-status','Added successfully');
     }
 
 

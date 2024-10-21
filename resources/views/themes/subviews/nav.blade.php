@@ -25,7 +25,7 @@
              </ul>
 
              <ul class="custom-navbar-cta navbar-nav mb-2 mb-md- ms-5">
-                 <li><a class="nav-link" href="{{route('cartpage')}}"><img src="{{ asset('assets') }}/images/cart.svg"></a></li>
+                 <li><a class="nav-link" href="{{route('showcart')}}"><img src="{{ asset('assets') }}/images/cart.svg"></a></li>
                  @if (!Auth::check())
                  <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <div style="border: 1px solid #f9bf29 ;padding: 5px 5px ;border-radius: 5px ;background-color:#f9bf29 ;color: white" >

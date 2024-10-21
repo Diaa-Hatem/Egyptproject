@@ -27,7 +27,7 @@
                 @if (count($items) > 0)
                     @foreach ($items as $item)
                         <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-                            <a class="product-item" href="{{ route('cartpage') }}">
+                            <a class="product-item" href="{{ route('cartpage' , ['id'=>$item->id]) }}">
                                 <img src="{{ asset('storage') }}/itemsphoto/{{ $item->image }}"
                                     class="img-fluid product-thumbnail">
                                 <h3 class="product-title">{{ $item->title }}</h3>
@@ -141,7 +141,7 @@
                         <li>Donec vitae odio quis nisl dapibus malesuada</li>
                         <li>Donec vitae odio quis nisl dapibus malesuada</li>
                     </ul>
-                    <p><a herf="#" class="btn">Explore</a></p>
+                    
                 </div>
             </div>
         </div>

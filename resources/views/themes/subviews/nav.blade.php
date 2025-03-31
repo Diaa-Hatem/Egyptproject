@@ -19,7 +19,7 @@
                  </li>
                  <li class="nav-item @yield('nav-active-services')"><a class="nav-link"
                          href="{{ route('servicespage') }}">Services</a></li>
-                 <li class="nav-item @yield('nav-active-blog')"><a class="nav-link" href="{{ route('blogpage') }}">Blog</a></li>
+                 
                  <li class="nav-item @yield('nav-active-contact')"><a class="nav-link" href="{{ route('contactpage') }}">Contact
                          us</a></li>
              </ul>

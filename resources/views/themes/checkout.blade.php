@@ -148,7 +148,7 @@
                                             <th>Total</th>
                                         </thead>
                                         <tbody>
-                                            @if (count($cart) > 0)
+                                            @if (isset($cart)&&count($cart) > 0)
                                                 @foreach ($cart as $item)
                                                     <tr>
                                                         <td>{{ $item['title'] }}<strong class="mx-2">x</strong>

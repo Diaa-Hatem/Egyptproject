@@ -63,8 +63,8 @@ class ThemeController extends Controller
         }
 
         session()->put('cart', $cart);
-        return back();
-        // return redirect()->action([ThemeController::class ,'showcart']);
+        // return back();
+        return redirect()->action([ThemeController::class ,'showcart']);
 
     }
 
